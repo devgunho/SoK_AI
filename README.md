@@ -579,7 +579,7 @@ keras.optimizers.SGD(lr = 0.01, momentum= 0.9)
 
 <br/>
 
-#### **Adagrad**
+#### **Adagrad** (Adaptive Gradient)
 
 ```python
 keras.optimizers.Adagrad(lr=0.01, epsilon=1e-6)
@@ -608,6 +608,12 @@ keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.
 
 - 아담은 알엠에스프롭과 모멘텀 두 가지를 합친 듯한 방법
 - 방향과 학습률 두 가지를 모두 잡기 위한 방법
+
+<br/>
+
+<p align="center">
+    <img src="README.assets/optimizer2.png"/>
+</p>
 
 <br/>
 
@@ -647,7 +653,12 @@ keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.
 
 ### Hierarchical Temporal Memory (HTM networks)
 
-
+- Hidden Layer안의 Neuron 끼리도 정보를 공유
+- 일반 NN보다 더 많은 Edge를 갖는 Nertworks
+- 계층적 구조를 형성하며 알고리즘이 내제적으로 시간적인 데이터를 고려하도록 만들어진 기계학습 기법
+- HTM 네트워크는 시간에 따라 변화되는 많은 양의 데이터를 훈련하며 많은 양의 시퀀스들과 패턴들을 저장하는 네트워크
+- HTM이 기둥 구조를 가지고 있으며 이러한 기둥 구조가 패턴을 pooling하는 역할
+- 시계열 분석을 이용한 이상탐지 모델에 주로 사용
 
 <br/>
 
