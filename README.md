@@ -8,7 +8,7 @@
 
 ## Table of Contents
 
-**인공지능 기술 개요**
+##### 인공지능 기술 개요
 
 - 인공지능 제반 기술 개요 및 주요 특징
   - 인공지능(Artificial Intelligence, AI)의 개요 및 역사
@@ -38,52 +38,49 @@
 
 <br/>
 
-**딥러닝**
+##### ✅ 딥러닝
 
-- 개요 및 신경망 구조
-  - 딥러닝
-
-    - 딥러닝 개요
-    - 딥러닝 특징
-
-  - 신경망의 구조
-
-    - 인공신경망(artificial neural networks)의 개요
+- **개요 및 신경망 구조**
+  - **Deep Learning**
+    - **딥러닝 개요**
+    - **딥러닝 특징**
+  - **Perceptron**
+    - **Single-Layer Perceptron**
+    - **Multi-Layer Perceptron**
+    - **Deep Neural Network**
+  - 신경망(Neural Network)의 구조
+    - 인공신경망(Artificial Neural Networks, ANN)의 개요
     - 인경신경망의 구조
-
   - 다층신경망
-
   - 딥러닝 방식
-
     - 강화학습(Reinforcement Learning)
-
       - 강화학습의 개요
       - MDP(Markov Decision Process) 방식
       - DQN(Deep Q-Network)
       - 강화학습의 특징
-
     - GPU 방식 병렬컴퓨팅
-
       - GPU(Graphics Processing Unit, 그래픽 처리 장치)
-
       - GPGPU(General Purpose Graphics Processing Units)
         - MPI(Message Passing Interface, 메시지 전달 인터페이스)
         - CUDA(Compute Unified Device Architecture, 쿠다)
-
         - OpenCL(Open Computing Language)
         - TPU(Tensor Processing Unit, TPU)
 
-- 기계학습
-  - 클러스터링(Clustering)과 기계학습
-  - 기계번역
+##### 기계학습
 
-- 딥러닝 기술 동향
-  - 개요
-  - RNN과 LSTM
-    - 순환신경망(Recurrent neural networks)
-    - LSTM(Long-short term memory, 장단기 기억 구조)
-  - 컨볼루션 네트워크(CNN, convolutional neural networks, 합성곱신경망)
-  - GAN(Generative Adversarial Network. 생성 대립 신경망)
+- 클러스터링(Clustering)과 기계학습
+- 기계번역
+
+<br/>
+
+##### 딥러닝 기술 동향
+
+- 개요
+- RNN과 LSTM
+  - 순환신경망(Recurrent neural networks)
+  - LSTM(Long-short term memory, 장단기 기억 구조)
+- 컨볼루션 네트워크(CNN, convolutional neural networks, 합성곱신경망)
+- GAN(Generative Adversarial Network. 생성 대립 신경망)
 
 - 이미지인식 기술
 
@@ -294,3 +291,521 @@
 [표 25] 대화형AI시스템의 분류
 [표 26] 국내외 주요 AI개인비서 서비스 현황
 ```
+
+<br/>
+
+<br/>
+
+## Deep Learning
+
+### 개요 및 신경망 구조
+
+#### 딥러닝 개요
+
+- 딥러닝은 머신 러닝의 특정한 한 분야로서 연속된 층(layer)에서 점진적으로 의미 있는 표현을 배우는 데 강점
+
+- 데이터로부터 표현을 학습하는 새로운 방식, 연속된 층으로 표현을 학습한다는 개념
+- 데이터로부터 모델을 만드는 데 얼마나 많은 층을 사용했는지가 곧 그 모델의 깊이
+
+<br/>
+
+#### 딥러닝 특징
+
+- 머신 러닝과 딥러닝의 핵심 문제는 **의미 있는 데이터로의 변환**
+
+- 입력 데이터를 기반으로 기대 출력에 가깝게 만드는 유용한 표현(Representation)을 학습하는 것
+
+  **Representation* : 데이터를 인코딩(Encoding)하거나 묘사하기 위해 데이터를 바라보는 다른 방법
+
+<br/>
+
+---
+
+<br/>
+
+### Linear Regression(선형 회귀)
+
+- 코드에서 사용될때는 sigmoid는 activation에, softmax는 classification 로 사용되지만 수학적으로는 서로 같은 함수, 클래스가 2개(sigmoid) 또는 K개의 차이
+
+<br/>
+
+----
+
+<br/>
+
+### Perceptron (퍼셉트론, Neuron)
+
+#### Single-Layer Perceptron (단층 퍼셉트론)
+
+- 값을 보내는 단계과 값을 받아서 출력하는 두 단계로만 이루어짐
+
+  <p align="center">
+      <img src="README.assets/perceptron1.png"/>
+  </p>
+
+<br/>
+
+#### Multi-Layer Perceptron (MLP, 다층 퍼셉트론)
+
+- 입력층과 출력층 사이에 존재하는 층을 **은닉층(hidden layer)**
+
+- 중간에 은닉층이 존재한다는 점이 단층 퍼셉트론과의 차이점
+
+  <p align="center">
+      <img src="README.assets/perceptron2.png"/>
+      <div align="center">AND, NAND, OR 게이트를 조합하여 XOR 게이트를 구현한 다층 퍼셉트론의 예시</div>
+  </p>
+
+<br/>
+
+<p align="center">
+    <img src="README.assets/perceptron3.png"/>
+</p>
+
+<br/>
+
+#### Deep Neural Network (DNN, 심층 신경망)
+
+- 은닉층이 2개 이상인 신경망을 **심층 신경망(Deep Neural Network, DNN)**이라 함
+- 일반적인 인공신경망과 마찬가지로 복잡한 비선형 관계(Non-Linear Relationship)들을 모델링할 수 있음
+
+<br/>
+
+---
+
+<br/>
+
+### 신경망(Neural Network)의 구조
+
+#### 인공신경망(Artificial Neural Networks, ANN)의 개요
+
+<p align="center">
+    <img src="README.assets/ann1.png"/>
+    <div align="center">신경망의 구성</div>
+</p>
+
+- 기본적으로 하나의 뉴런은 입력(X)를 받아서 출력(Y)을 만들어 다음 뉴런에게 전달
+
+- 퍼셉트론(=출력 Y)은 입력 신호(X)에 가중치(W)를 곱한 값에 편향(b)을 합하고, 합한 값이 0을 넘으면 활성화, 넘지 않으면 비활성화
+
+  ```
+  Y = Activation Function(X * W + b)
+  ```
+  - 가중치란?
+    - 각 입력 신호가 **결과 출력에 미치는 중요도를 조절**하는 매개변수
+  - 편향이란?
+    - **뉴런의 활성화를 조절**하는 매개변수
+    - **뉴런의** **활성화 조건을 설정**하는 매개변수
+
+<br/>
+
+#### 깊은 DNN 모델 학습의 문제점
+
+- 그래디언트 소실(vanishing gradient) 또는 폭주(exploding)가 발생할 수 있음
+- 모델이 복잡하고 커질수록 학습시간이 매우 느려짐
+- 모델이 복잡할수록 오버피팅(overfitting)될 위험이 큼
+
+
+<br/>
+
+----
+
+<br/>
+
+### Activation Function
+
+- 출력값을 ANN에 적합하게 바꿔주는 역할 수행
+
+- 입력을 받아서 활성화 또는 비활성화를 결정하는 데에 사용되는 함수
+
+  <p align="center">
+      <img src="README.assets/activation-function1.png"/>
+  </p>
+
+<br/>
+
+#### Sigmoid
+
+- Logistic 함수라고 불리기도 하며, x의 값에 따라 0~1의 값을 출력하는 S자형 함수
+
+  <p align="center">
+      <img src="README.assets/sigmoid1.png"/>
+      <div align="center">Sigmoid 함수(좌) & Sigmoid 도함수(우)</div>
+  </p>
+
+- 미분 계수를 기울기 혹은 Gradient값이라고 함
+- Sigmoid 함수는 음수 값을 0에 가깝게 표현하기 때문에 입력 값이 최종 레이어에서 미치는 영향이 적어지는 ***Vanishing Gradient Problem**이 발생
+
+###### *Vanishing Gradient Problem (기울기 소멸 문제)
+
+- 깊은 심층신경망에서는 역전파 알고리즘이 입력층으로 전달됨에 따라 그래디언트가 점점 작아져 결국 가중치 매개변수가 업데이트 되지 않는 경우가 발생
+
+<p align="center">
+    <img src="README.assets/vanishing-gradient1.png"/>
+</p>
+
+###### ***Exploding Gradient (그래디언트 폭주)**
+
+- 그래디언트 소실과는 반대로 ***역전파**에서 그래디언트가 점점 커져 입력층으로 갈수록 가중치 매개변수가 기하급수적으로 커지게 되는 경우
+- 이 경우에는 발산(diverse)하게 되어 학습이 제대로 이루어지지 않음
+
+<br/>
+
+#### Backpropagation
+
+- 각 뉴련들은 모두 제각각의 많은 가중치와 바이어스 값의 조합을 가지고 있으며, 전파되는 과정에서 가중치와 Bias 값을 조절하게 됨
+
+- 단순히 데이터를 오른쪽으로만 전달하면 데이터 최적화가 잘 이루어지지 않기때문에, 결과값에서 오차가 발생하면 해당 오차만큼 앞쪽으로 다시 전파시키면서 가중치를 갱신하는 것
+
+  <p align="center">
+      <img src="README.assets/backpropagation1.png"/>
+      <div align="center">역전파 (Backpropagation)</div>
+  </p>
+
+<br/>
+
+#### Tanh
+
+- Hyperbolic Tangent Function은 쌍곡선 함수 중 하나로, Sigmoid 함수를 변형해서 얻을 수 있음
+
+  <p align="center">
+      <img src="README.assets/tanh1.png"/>
+  </p>
+
+- tanh 함수는 함수의 중심점을 0으로 옮겨 sigmoid가 갖고 있던 최적화 과정에서 느려지는 문제를 해결
+- 하지만 미분함수에 대해 일정 값 이상에서 미분 값이 소실되는 Vanishing Gradient Problem은 여전히 남아있음
+
+<br/>
+
+#### ReLU
+
+- ReLU(Rectified Linear Unit, 경사함수)는 가장 많이 사용되는 활성화 함수 중 하나
+
+- Sigmoid와 tanh가 갖는 Gradient Vanishing 문제를 해결하기 위한 함수
+
+  <p align="center">
+      <img src="README.assets/relu1.png"/>
+  </p>
+
+- x가 0보다 크면 기울기가 1인 직선, 0보다 작으면 함수 값이 0
+
+- 0보다 작은 값들에서 뉴런이 죽을 수 있는 단점
+
+- sigmoid, tanh 함수보다 학습이 빠르고, 연산 비용이 적고, 구현이 매우 간단하다는 특징
+
+<br/>
+
+----
+
+<br/>
+
+### DNN의 높은 시간 복잡도
+
+- 오차역전파법(Backpropagation)과 경사 하강법(Gradient Descent)은 구현의 용이함과 국지적 최적화(local optima)에 잘 도달한다는 특성이 있어서 선호되어 옴, 하지만 시간 복잡도가 매우 높음
+- 심층 신경망을 학습시킬 때에는 크기(계층의 수 와 계층 당 유닛 수), 학습률, 초기 가중치 등 많은 매개변수(parameter)들이 고려되어야 함
+- 하지만 최적의 매개변수들을 찾기 위해 매개변수 공간 전부를 확인하는 것은 계산에 필요한 시간과 자원의 제약으로 인해 불가능
+- 시간 복잡도를 해결하기 위해, **미니 배치(mini batch)**, **드롭 아웃(drop out)**과 같은 방법론 등장
+
+<br/>
+
+#### Batch
+
+- 배치는 가중치 등의 매개 변수의 값을 조정하기 위해 사용하는 데이터의 양
+
+<br/>
+
+-----
+
+<br/>
+
+### **옵티마이저 (Optimizer)**
+
+<p align="center">
+    <img src="README.assets/optimizer1.png"/>
+</p>
+
+- 손실 함수의 값을 줄여나가면서 학습하는 방법은 어떤 옵티마이저를 사용하느냐에 따라 달라짐
+
+<br/>
+
+#### BGD (Batch Gradient Descent, 배치 경사 하강법)
+
+- 전체 데이터를 기준으로 가중치를 업데이트
+
+- 모든 데이터에 대한 cost 값을 계산하고 평균을 낸 후에야 한 번 가중치가 업데이트
+
+- 에포크당 시간이 오래 걸리며, 메모리를 크게 요구한다는 단점
+
+  <p align="center">
+      <img src="README.assets/batch1.png"/>
+      <div align="center">Batch Problem Space</div>
+  </p>
+
+<br/>
+
+#### SGD (Stochastic Gradient Descent, 확률적 경사 하강법)
+
+- 개별 데이터를 기준으로 가중치를 업데이트
+
+- 매개변수의 변경폭이 불안정하고, 때로는 배치 경사 하강법보다 정확도가 낮을 수도 있음
+
+  <p align="center">
+      <img src="README.assets/sgd1.png"/>
+      <div align="center">SGD Problem Space</div>
+  </p>
+
+<br/>
+
+#### Mini-Batch
+
+- Batch와 SGD의 절충안
+
+- 모든 데이터에 대해서 가중치 평균을 구하는 것이 아니라 전체 데이터에서 일부 데이터를 묶음방식으로하여 데이터 학습을 진행시키는 방식
+
+  <p align="center">
+      <img src="README.assets/mini-batch1.png"/>
+  </p>
+
+<br/>
+
+#### 모멘텀(Momentum)
+
+```python
+keras.optimizers.SGD(lr = 0.01, momentum= 0.9)
+```
+
+- 모멘텀은 경사 하강법에서 계산된 접선의 기울기에 한 시점(step) 전의 접선의 기울기값을 일정한 비율만큼 반영
+
+  <p align="center">
+      <img src="README.assets/momentum1.png"/>
+  </p>
+
+<br/>
+
+#### **Adagrad**
+
+```python
+keras.optimizers.Adagrad(lr=0.01, epsilon=1e-6)
+```
+
+- 아다그라드는 각 매개변수에 서로 다른 학습률을 적용
+- 변화가 많은 매개변수는 학습률이 작게 설정되고 변화가 적은 매개변수는 학습률을 높게 설정
+
+<br/>
+
+#### RMSprop
+
+```python
+keras.optimizers.RMSprop(lr=0.001, rho=0.9, epsilon=1e-06)
+```
+
+- 아다그라드는 학습을 계속 진행한 경우에는, 나중에 가서는 학습률이 지나치게 떨어진다는 단점이 있는데 이를 다른 수식으로 대체하여 이러한 단점을 개선
+
+<br/>
+
+#### Adam
+
+```python
+keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
+```
+
+- 아담은 알엠에스프롭과 모멘텀 두 가지를 합친 듯한 방법
+- 방향과 학습률 두 가지를 모두 잡기 위한 방법
+
+<br/>
+
+#### 드롭아웃(Dropout)
+
+- 드롭아웃은 학습 과정에서 신경망의 일부를 사용하지 않는 방법
+
+- 드롭아웃의 비율을 0.5로 한다는 것은 학습 과정마다 랜덤으로 절반의 뉴런을 사용하지 않고, 절반의 뉴런만을 사용한다는 것
+
+  <p align="center">
+      <img src="README.assets/dropout1.png"/>
+  </p>
+
+- 학습 시에만 사용하고, 예측 시에는 사용하지 않는 것이 일반적
+
+- 학습 시에 인공 신경망이 특정 뉴런 또는 특정 조합에 너무 의존적이게 되는 것을 방지
+
+- 매번 랜덤 선택으로 뉴런들을 사용하지 않으므로 서로 다른 신경망들을 앙상블하여 사용하는 것 같은 효과를 내어 과적합을 방지
+
+  ```python
+  model = Sequential()
+  model.add(Dense(256, input_shape=(max_words,), activation='relu'))
+  model.add(Dropout(0.5))
+  model.add(Dense(128, activation='relu'))
+  model.add(Dropout(0.5))
+  model.add(Dense(num_classes, activation='softmax'))
+
+---
+
+- 다층신경망
+  - ANN의 은닉층을 깊게 쌓아 만든 딥러닝 모델들이 등장
+  - DNN 응용 알고리즘에는, CNN, RNN, LSTM, GRU 등이 있음
+
+---
+
+<br/>
+
+### Hierarchical Temporal Memory (HTM networks)
+
+
+
+<br/>
+
+----
+
+- 딥러닝 방식
+
+  - 강화학습(Reinforcement Learning)
+
+    - 강화학습의 개요
+    - MDP(Markov Decision Process) 방식
+    - DQN(Deep Q-Network)
+    - 강화학습의 특징
+
+  - GPU 방식 병렬컴퓨팅
+
+    - GPU(Graphics Processing Unit, 그래픽 처리 장치)
+
+    - GPGPU(General Purpose Graphics Processing Units)
+      - MPI(Message Passing Interface, 메시지 전달 인터페이스)
+      - CUDA(Compute Unified Device Architecture, 쿠다)
+
+      - OpenCL(Open Computing Language)
+      - TPU(Tensor Processing Unit, TPU)
+
+<br/>
+
+## 모델 평가
+
+### 모델의 분류와 정답
+
+- 모델을 평가하는 요소는 결국, 모델이 내놓은 답과 실제 정답의 관계로써 정의를 내릴 수 있음
+
+  <p align="center">
+      <img src="README.assets/confusion-matrix1.png"/>
+  </p>
+  - True Positive(TP) : 실제 True인 정답을 True라고 예측 (정답)
+  - False Positive(FP) : 실제 False인 정답을 True라고 예측 (오답)
+  - False Negative(FN) : 실제 True인 정답을 False라고 예측 (오답)
+  - True Negative(TN) : 실제 False인 정답을 False라고 예측 (정답)
+
+<br/>
+
+#### Precision (정밀도)
+
+<br/>
+
+#### Recall(재현율)
+
+<br/>
+
+#### ROC curve
+
+- 보통 binary classification 이나 medical application에서 많이 쓰는 성능 척도
+
+<br/>
+
+#### AUC (Area Under the Curve)
+
+- ROC curve 아래 면적을 AUC라 함
+
+<br/>
+
+#### ROC curve를 쓰는 이유
+
+- 클래스별 분포가 다를 때, Accuracy의 단점을 보완하면서 더 자세히 보기 위함
+
+  <p align="center">
+      <img src="README.assets/roc1.png"/>
+  </p>
+
+  - 겹치는 영역이 많다면, 초록선을 움직여도 error가 많이 발생
+  - 겹치는 영역이 많을 수록 직선에 가까워지게 됨
+
+<br/>
+
+<br/>
+
+## 기계학습
+
+- 클러스터링(Clustering)과 기계학습
+- 기계번역
+
+<br/>
+
+## 딥러닝 기술 동향
+
+- 개요
+
+---
+
+<br/>
+
+### RNN 과 LSTM, GRU
+
+#### 순환신경망(Recurrent neural networks)
+
+- RNN 알고리즘은 반복적이고 순차적인 데이터(Sequential data)학습에 특화된 인공신경망의 한 종류
+
+- 내부의 순환구조가 들어있는 특징
+
+- 순환구조를 이용하여, 과거의 학습을 Weight를 통해 현재 학습에 반영
+
+- 음성 Waveform을 파악하거나(Machine Translation) , 텍스트의 문장 앞 뒤성분을 파악할 때(Named Entity Recognition), 주로 사용
+
+  <p align="center">
+      <img src="README.assets/rnn1.png"/>
+  </p>
+
+- 이 RNN 단점은 처음시작한 Weight의 값이 점차 학습이 될 수록 상쇄 된다는 것이였는데, 이를 보완한 알고리즘이 LSIM(Long Short Term Memory Network) 알고리즘
+
+<br/>
+
+#### LSTM(Long-short term memory, 장단기 기억 구조)
+
+- LSTM알고리즘은 Cell State라고 불리는 특징층을 하나 더 넣어 Weight를 계속 기억할 것인지 결정
+  - Gradient Vanishing의 문제를 해결
+- LSTM은 과거의 data를 계속해서 update 하므로, RNN보다 지속적
+- Cell state는 정보를 추가하거나 삭제하는 기능을 담당
+- LSTM의 장점은 각각의 메모리 컨트롤이 가능하다는 점과 결과값이 컨트롤이 가능
+- 메모리가 덮어씌워질 가능성이 있고, 연산속도가 느리다는 단점
+
+<br/>
+
+#### GRUs (Gated Recurrent Units)
+
+- LSTM을 변형시킨 알고리즘으로, Gradient Vanishing의 문제를 해결
+- 초기의 weight가 계속 지속적으로 업데이트되었지만, GRUs는 Update Gate와 Reset Gate를 추가하여, 과거의 정보를 어떻게 반영할 것인지 결정
+- Update Gate는 과거의 상태를 반영하는 Gate이며, Reset Gate는 현시점 정보와 과거시점 정보의 반영 여부를 결정
+- GRUs의 장점은 연산속도가 빠르며, 메모리가 LSTM처럼 덮여 씌여질 가능성이 없다. 그러나 메모리와 결과값의 컨트롤이 불가능하다는 단점
+
+<br/>
+
+---
+
+- 컨볼루션 네트워크(CNN, convolutional neural networks, 합성곱신경망)
+- GAN(Generative Adversarial Network. 생성 대립 신경망)
+- 이미지인식 기술
+- 자연어 처리(Natural Language Processing, NLP)
+  - 자연어 처리(NLP) 개요
+    - Word2Vec
+    - RNN과 자연어 처리
+    - CNN과 자연어 처리
+  - 자연어 처리와 인공지능비서
+    - 질의응답 시스템(question-answering system)
+    - 대화시스템
+
+<br/>
+
+<br/>
+
+## Reference
+
+- [텐서 플로우 블로그 - 딥러닝이란 무엇인가?](https://tensorflow.blog/%EC%BC%80%EB%9D%BC%EC%8A%A4-%EB%94%A5%EB%9F%AC%EB%8B%9D/1-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/)
+- [안경잡이개발자 - ANN의 원리](https://m.blog.naver.com/PostView.naver?blogId=ndb796&logNo=221280341708&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [TCP School - 딥러닝에서 사용되는 알고리즘](#http://tcpschool.com/deeplearning/deep_algorithm1)
+- [Tistory - HTM](https://dodonam.tistory.com/214)
+- [Tistory - ROC, AUC](https://nittaku.tistory.com/297)
