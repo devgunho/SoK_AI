@@ -81,9 +81,7 @@
   - LSTM(Long-short term memory, 장단기 기억 구조)
 - 컨볼루션 네트워크(CNN, convolutional neural networks, 합성곱신경망)
 - GAN(Generative Adversarial Network. 생성 대립 신경망)
-
 - 이미지인식 기술
-
 - 자연어 처리(Natural Language Processing, NLP)
   - 자연어 처리(NLP) 개요
     - Word2Vec
@@ -105,7 +103,6 @@
       - 생성자(generator) 네트워크
       - 판별자(discriminator) 네트워크
     -  적대적 학습 방법
-
 - GAN 기술동향
   - GAN 기술동향 개요
   - GAN 응용 모델과 적용 사례
@@ -114,7 +111,6 @@
     - Laplacian GAN
     - DCGAN(Deep Convolutional Generative Adversarial Networks)
     - DiscoGAN
-
 - 인공지능의 향후 전망
   - 인공지능 시장 전망
 
@@ -391,6 +387,7 @@
   ```
   Y = Activation Function(X * W + b)
   ```
+
   - 가중치란?
     - 각 입력 신호가 **결과 출력에 미치는 중요도를 조절**하는 매개변수
   - 편향이란?
@@ -504,7 +501,7 @@
 - 오차역전파법(Backpropagation)과 경사 하강법(Gradient Descent)은 구현의 용이함과 국지적 최적화(local optima)에 잘 도달한다는 특성이 있어서 선호되어 옴, 하지만 시간 복잡도가 매우 높음
 - 심층 신경망을 학습시킬 때에는 크기(계층의 수 와 계층 당 유닛 수), 학습률, 초기 가중치 등 많은 매개변수(parameter)들이 고려되어야 함
 - 하지만 최적의 매개변수들을 찾기 위해 매개변수 공간 전부를 확인하는 것은 계산에 필요한 시간과 자원의 제약으로 인해 불가능
-- 시간 복잡도를 해결하기 위해, **미니 배치(mini batch)**, **드롭 아웃(drop out)**과 같은 방법론 등장
+- 시간 복잡도를 해결하기 위해, **미니 배치(mini batch), 드롭 아웃(drop out)**과 같은 방법론 등장
 
 <br/>
 
@@ -687,6 +684,7 @@ keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.
   <p align="center">
       <img src="README.assets/confusion-matrix1.png"/>
   </p>
+
   - True Positive(TP) : 실제 True인 정답을 True라고 예측 (정답)
   - False Positive(FP) : 실제 False인 정답을 True라고 예측 (오답)
   - False Negative(FN) : 실제 True인 정답을 False라고 예측 (오답)
