@@ -1,9 +1,8 @@
-# SoK AI (DevGun) 🇰🇷
+# Systematization of Knowledge (SoK) AI with Code - DevGun 🇰🇷
 
 <p align="center">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"/>
 </p>
-
 <br/>
 
 ## Table of Contents
